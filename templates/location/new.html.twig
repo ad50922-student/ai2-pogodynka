@@ -3,9 +3,20 @@
 {% block title %}New Location{% endblock %}
 
 {% block body %}
-    <h1>Create new Location</h1>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h1>Create New Location</h1>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+                {{ form_row(form.city, {'attr': {'class': 'form-control', 'placeholder': 'Enter city name'}}) }}
+                {{ form_row(form.country, {'attr': {'class': 'form-select'}}) }}
+                {{ form_row(form.latitude, {'attr': {'class': 'form-control', 'placeholder': 'Enter latitude'}}) }}
+                {{ form_row(form.longitude, {'attr': {'class': 'form-control', 'placeholder': 'Enter longitude'}}) }}
+                <button class="btn btn-primary mt-3">Save</button>
+            {{ form_end(form) }}
 
-    {{ include('location/_form.html.twig') }}
-
-    <a href="{{ path('app_location_index') }}">back to list</a>
+            <a href="{{ path('app_location_index') }}" class="btn btn-secondary mt-3">Back to list</a>
+        </div>
+    </div>
 {% endblock %}
