@@ -3,11 +3,19 @@
 {% block title %}Edit Measurement{% endblock %}
 
 {% block body %}
-    <h1>Edit Measurement</h1>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h1>Edit Measurement</h1>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+                {{ form_row(form.celsius, {'attr': {'class': 'form-control', 'placeholder': 'Enter temperature'}}) }}
+                {{ form_row(form.date, {'attr': {'class': 'form-control', 'placeholder': 'Enter date'}}) }}
+                {{ form_row(form.location, {'attr': {'class': 'form-control', 'placeholder': 'Choose the id of a location'}}) }}
+                <button class="btn btn-primary mt-3">Update</button>
+            {{ form_end(form) }}
 
-    {{ include('measurement/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_measurement_index') }}">back to list</a>
-
-    {{ include('measurement/_delete_form.html.twig') }}
+            <a href="{{ path('app_measurement_index') }}" class="btn btn-secondary mt-3">Back to list</a>
+        </div>
+    </div>
 {% endblock %}
