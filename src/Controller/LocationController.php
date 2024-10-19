@@ -26,7 +26,10 @@ final class LocationController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $location = new Location();
-        $form = $this->createForm(LocationType::class, $location);
+        $form = $this->createForm(LocationType::class, $location, [
+            'validation_groups' => 'create',
+        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

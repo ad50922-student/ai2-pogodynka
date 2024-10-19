@@ -1,6 +1,11 @@
 twig:
     file_name_pattern: '*.twig'
 
+    # Włączenie wsparcia dla cache'owania szablonów i bezpiecznego trybu dla zmiennych
+    cache: '%kernel.cache_dir%/twig'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
 when@test:
     twig:
         strict_variables: true
