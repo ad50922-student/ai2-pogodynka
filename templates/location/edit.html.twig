@@ -17,6 +17,7 @@
             {{ form_end(form) }}
 
             <a href="{{ path('app_location_index') }}" class="btn btn-secondary mt-3">Back to list</a>
+            <a href="{{ path('app_measurement_index') }}" class="btn btn-secondary mt-3">{{ include('location/_delete_form.html.twig') }}</a>
         </div>
     </div>
 {% endblock %}

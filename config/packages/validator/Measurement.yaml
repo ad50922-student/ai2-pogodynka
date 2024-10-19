@@ -1,0 +1,23 @@
+# config/validator/Measurement.yaml
+
+App\Entity\Measurement:
+    properties:
+        location:
+            - NotBlank:
+                groups: [Create, Edit]
+        date:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Type:
+                type: \DateTime
+                groups: [Create, Edit]
+        celsius:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Type:
+                type: numeric
+                groups: [Create, Edit]
+            - Range:
+                min: -100
+                max: 100
+                groups: [Create, Edit]

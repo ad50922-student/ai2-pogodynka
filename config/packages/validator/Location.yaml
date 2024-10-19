@@ -1,0 +1,38 @@
+# config/validator/Location.yaml
+
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Length:
+                min: 3
+                max: 255
+                groups: [Create, Edit]
+        country:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Length:
+                min: 2
+                max: 2
+                groups: [Create, Edit]
+        latitude:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Type:
+                type: numeric
+                groups: [Create, Edit]
+            - Range:
+                min: -90
+                max: 90
+                groups: [Create, Edit]
+        longitude:
+            - NotBlank:
+                groups: [Create, Edit]
+            - Type:
+                type: numeric
+                groups: [Create, Edit]
+            - Range:
+                min: -180
+                max: 180
+                groups: [Create, Edit]
