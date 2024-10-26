@@ -1,12 +1,8 @@
-App\Entity\Forecast:
+App\Entity\Measurement:
   properties:
-    city:
-      - NotBlank:
-          message: 'You should choose a city.'
-          groups: [ 'create', 'edit' ]
     date:
       - NotBlank:
-            groups: [ 'create', 'edit' ]
+          groups: [ 'create', 'edit' ]
       - Type:
           type: \DateTime
           groups: [ 'create', 'edit' ]
