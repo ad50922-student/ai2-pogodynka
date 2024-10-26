@@ -1,0 +1,22 @@
+App\Entity\Forecast:
+  properties:
+    city:
+      - NotBlank:
+          message: 'You should choose a city.'
+          groups: [ 'create', 'edit' ]
+    date:
+      - NotBlank:
+            groups: [ 'create', 'edit' ]
+      - Type:
+          type: \DateTime
+          groups: [ 'create', 'edit' ]
+    celsius:
+      - NotBlank:
+          groups: [ 'create', 'edit' ]
+      - Type:
+          type: numeric
+          groups: [ 'create', 'edit' ]
+      - Range:
+          min: -100
+          max: 100
+          groups: [ 'create', 'edit' ]
