@@ -1,0 +1,5 @@
+{# templates/weather_api/index.csv.twig #}
+city, country, date, celsius, fahrenheit<br>
+{% for measurement in measurements %}
+{{ city }}, {{ country }}, {{ measurement.date|date('Y-m-d') }}, {{ measurement.celsius }}, {{ measurement.fahrenheit }}<br>
+{% endfor %}
